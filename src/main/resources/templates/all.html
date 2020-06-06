@@ -1,11 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="ja" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Secure page</title>
 </head>
 <body>
+
+<p>Username: <span sec:authentication="principal.username"></span></p>
+<p>Role: <span sec:authorize="hasRole('ADMIN')">ADMIN</span> <span sec:authorize="hasRole('MEMBER')">MEMBER</span></p>
 
 <a href="/secure/memberonly">Member only page</a> <br><br>
 <a href="/secure/adminonly">Admin only page</a>
