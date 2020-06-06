@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Login Page</title>
+</head>
+<body>
+
+<form id="logout_submit" method='post' th:action="@{/auth/login-handle}">
+    <table>
+        <tr>
+            <td>Login ID</td>
+            <td><input type='text' name='login_id' value="admin" maxlength='20' required></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type='password' name='login_password' minlength='8' maxlength='20' required></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Login"></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+CREATE TABLE users (
+	user	VARCHAR(21) NOT NULL UNIQUE,
+	password	VARCHAR(61) NOT NULL,
+	enabled	BOOLEAN NOT NULL,
+	PRIMARY KEY(user),
+	CONSTRAINT UQ__user UNIQUE (user)
+);
+
+CREATE TABLE authorities (
+	user	VARCHAR(21) NOT NULL,
+	role	VARCHAR(21) NOT NULL
+);
